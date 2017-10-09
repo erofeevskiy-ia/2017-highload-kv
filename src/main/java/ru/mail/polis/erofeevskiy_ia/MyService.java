@@ -96,6 +96,10 @@ public class MyService implements KVService {
 
     @Override
     public void stop() {
-        this.server.stop(1);
+        try {
+            this.server.stop(1);
+        } catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }
